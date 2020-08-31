@@ -1,10 +1,15 @@
 package com.mrojas.ejercicios.modelo;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-import lombok.Data;
+import com.google.common.base.MoreObjects;
 
-@Data
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class CuentaPaciente {
 
 	private int id;
@@ -13,4 +18,13 @@ public class CuentaPaciente {
 	private int entidadComercialId;
 	private LocalDateTime fechaIngreso;
 	boolean activa;
+	
+	@Override
+	public String toString() {
+		return MoreObjects.toStringHelper(this)
+		.add("ID", id)
+		.add("Consecutivo", consecutivo)
+		.add("Fecha Ingreso", DateTimeFormatter.ISO_DATE.format(fechaIngreso))
+		.toString();
+	}
 }

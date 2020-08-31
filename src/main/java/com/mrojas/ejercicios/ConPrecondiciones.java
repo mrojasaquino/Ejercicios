@@ -3,6 +3,7 @@ package com.mrojas.ejercicios;
 import com.google.common.base.Preconditions;
 import com.mrojas.ejercicios.modelo.CuentaPaciente;
 import com.mrojas.ejercicios.modelo.DataProducer;
+import com.mrojas.ejercicios.modelo.EntidadComercial;
 import com.mrojas.ejercicios.modelo.Paciente;
 
 import lombok.extern.slf4j.Slf4j;
@@ -31,11 +32,20 @@ public class ConPrecondiciones {
 	private static void generarCargo() {
 		//obtener cuenta paciente activa para generarle un cargo
 		CuentaPaciente ctaPac = DP.findCuentaActivaForPacienteId(70);
+		int entidadComercialId;
 
 		Preconditions.checkArgument(ctaPac != null, "El paciente no tiene una cuenta paciente activa.");
-		Preconditions.checkArgument(ctaPac.getEntidadComercialId() > 0, "La cuenta paciente no tiene una entidad comercial asociada.");
-
-		log.info("*** Vamos a generar el cargo");
+		
+		if(ctaPac.getEntidadComercialId() < 0) {
+			EntidadComercial entidad = DP.findEntidadComercialForPacienteId(70);
+			
+			Preconditions.checkArgument(entidad != null, "");
+			entidadComercialId = entidad.getId();
+		} else {
+			entidadComercialId = ctaPac.getEntidadComercialId();
+		}
+		
+		log.info("*** Vamos a generar el cargo con la entidad comercial {}", entidadComercialId);
 	}
 
 

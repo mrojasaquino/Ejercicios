@@ -2,6 +2,7 @@ package com.mrojas.ejercicios;
 
 import com.mrojas.ejercicios.modelo.CuentaPaciente;
 import com.mrojas.ejercicios.modelo.DataProducer;
+import com.mrojas.ejercicios.modelo.EntidadComercial;
 import com.mrojas.ejercicios.modelo.Paciente;
 
 import lombok.extern.slf4j.Slf4j;
@@ -30,24 +31,40 @@ public class AntesPrecondiciones {
 	private static void generarCargo() {
 		//obtener cuenta paciente activa para generarle un cargo
 		CuentaPaciente ctaPac = DP.findCuentaActivaForPacienteId(70);
+		int entidadComercialId;
 
+		log.info("*** Cuenta paciente : {}", ctaPac);
+		
 		if(ctaPac == null) {
 			throw new IllegalArgumentException("El paciente no tiene una cuenta paciente activa.");
 		} else {
-			// vamos revisar si tiene entidad comercial asociada
+			//vamos revisar si tiene entidad comercial asociada
 			if(ctaPac.getEntidadComercialId() <= 0) {
-				throw new IllegalStateException("La cuenta paciente no tiene una entidad comercial asociada.");
+				
+				//no tiene, recuperamos la asociada al paciente
+				EntidadComercial entidad = DP.findEntidadComercialForPacienteId(ctaPac.getPacienteId());
+				
+				if(entidad == null) {
+					throw new IllegalStateException("El paciente no tiene una entidad comercial asociada.");
+				} else {
+					entidadComercialId = entidad.getId();
+				}
 			} else {
-				log.info("*** Vamos a generar el cargo");
+				entidadComercialId = ctaPac.getEntidadComercialId();
 			}
+			
+			log.info("*** Vamos a generar el cargo con la entidad comercial {}", entidadComercialId);
+			
 		}
 	}
 
 
 	private static void aplicarMedicamentoValidarAlergia() throws Exception {
-		//obtener cuenta paciente activa para generarle un cargo
+		//obtener cuenta paciente activa )para generarle un cargo
 		CuentaPaciente ctaPac = DP.findCuentaActivaForPacienteId(10);
 
+		log.info("*** Cuenta paciente : {}", ctaPac);
+		
 		if(ctaPac == null) {
 			throw new IllegalArgumentException("El paciente no tiene una cuenta paciente activa.");
 		} else {

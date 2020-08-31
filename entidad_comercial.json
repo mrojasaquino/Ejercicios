@@ -4,21 +4,21 @@
 		"idFiscal" : "ABCD-701220",
 		"nombre" : "Juan Pérez",
 		"direccionFiscal" : "ABC 123",
-		"direccionFactura" : ""
+		"direccionFactura" : null
 	}
 	,{
 		"id" : "20",
 		"idFiscal" : "ABC-401212",
 		"nombre" : "Pedro Pérez",
-		"direccionFiscal" : "",
-		"direccionFactura" : ""
+		"direccionFiscal" : null,
+		"direccionFactura" : null
 	}
 	,{
 		"id" : "30",
 		"idFiscal" : "ABC-900127",
 		"nombre" : "Miguel Hérnandez",
 		"direccionFiscal" : "Callejón del Susto",
-		"direccionFactura" : ""
+		"direccionFactura" : null
 	}
 	,{
 		"id" : "40",
