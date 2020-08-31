@@ -46,7 +46,6 @@ public class Flujos2 {
 			});
 
 			modeloDatos.put(categoria, preguntas);
-
 		});
 
 	}
@@ -68,9 +67,7 @@ public class Flujos2 {
 					);
 		});
 
-
 		log.info("*** Total de preguntas a guardar {}", aGuardar.size());
-
 	}
 
 

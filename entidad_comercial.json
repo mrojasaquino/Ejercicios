@@ -1,0 +1,30 @@
+[
+	{
+		"id" : "10",
+		"idFiscal" : "ABCD-701220",
+		"nombre" : "Juan Pérez",
+		"direccionFiscal" : "ABC 123",
+		"direccionFactura" : ""
+	}
+	,{
+		"id" : "20",
+		"idFiscal" : "ABC-401212",
+		"nombre" : "Pedro Pérez",
+		"direccionFiscal" : "",
+		"direccionFactura" : ""
+	}
+	,{
+		"id" : "30",
+		"idFiscal" : "ABC-900127",
+		"nombre" : "Miguel Hérnandez",
+		"direccionFiscal" : "Callejón del Susto",
+		"direccionFactura" : ""
+	}
+	,{
+		"id" : "40",
+		"idFiscal" : "ABC-200101",
+		"nombre" : "Juana Tijeras",
+		"direccionFiscal" : "Rancho la Escondida",
+		"direccionFactura" : "Rancho la Escondida"
+	}
+]

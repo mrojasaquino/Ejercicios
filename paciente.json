@@ -1,0 +1,58 @@
+[
+	{
+		"id": "10",
+		"nombre": "Juan Perez",
+		"fechaNacimiento": "1970-12-20T14:59:10",
+		"entidadComercialId" : "10",
+		"tieneAlergias" : "true",
+		"tieneCondicionesMedicas" : "true"
+	}
+	,{
+		"id": "20",
+		"nombre": "Pedro Perez",
+		"fechaNacimiento": "1940-12-12T14:59:10",
+		"entidadComercialId" : "20",
+		"tieneAlergias" : "true",
+		"tieneCondicionesMedicas" : "true"
+	}
+	,{
+		"id": "30",
+		"nombre": "Miguel Hernandez",
+		"fechaNacimiento": "1990-01-27T00:00:00",
+		"entidadComercialId" : "30",
+		"tieneAlergias" : "false",
+		"tieneCondicionesMedicas" : "false"
+	}
+	,{
+		"id": "40",
+		"nombre": "Alejandro Hernández",
+		"fechaNacimiento": "2000-01-30T15:20:00",
+		"entidadComercialId" : "30",
+		"tieneAlergias" : "false",
+		"tieneCondicionesMedicas" : "false"
+	}
+	,{
+		"id": "50",
+		"nombre": "Juliana Martínez",
+		"fechaNacimiento": "1940-06-20T00:00:00",
+		"entidadComercialId" : "-1",
+		"tieneAlergias" : "true",
+		"tieneCondicionesMedicas" : "true"
+	}
+	,{
+		"id": "60",
+		"nombre": "Alfredo Rojas",
+		"fechaNacimiento": "2010-07-22T23:55:12",
+		"entidadComercialId" : "-1",
+		"tieneAlergias" : "false",
+		"tieneCondicionesMedicas" : "false"
+	}
+	,{
+		"id": "70",
+		"nombre": "Jose Ruiz",
+		"fechaNacimiento": "1928-03-16T00:00:00",
+		"entidadComercialId" : "-1",
+		"tieneAlergias" : "false",
+		"tieneCondicionesMedicas" : "true"
+	}
+]
