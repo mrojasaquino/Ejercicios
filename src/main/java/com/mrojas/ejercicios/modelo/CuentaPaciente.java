@@ -8,6 +8,7 @@ import lombok.Data;
 public class CuentaPaciente {
 
 	private int id;
+	private String consecutivo;
 	private int pacienteId;
 	private int entidadComercialId;
 	private LocalDateTime fechaIngreso;

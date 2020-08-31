@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
@@ -106,9 +108,13 @@ public enum DataProducer {
 	}
 	
 	public CuentaPaciente findCuentaActivaForPacienteId(int pacienteId) {
-		CuentaPaciente retVal = null;
+		AtomicReference<CuentaPaciente> retVal = new AtomicReference<>();
 		
+		if(cuentas.containsKey(pacienteId)) {
+			cuentas.get(pacienteId)
+			.stream().filter(CuentaPaciente::isActiva).findFirst().ifPresent(cuenta -> retVal.set(cuenta));
+		}
 		
-		return retVal;
+		return retVal.get();
 	}
 }
