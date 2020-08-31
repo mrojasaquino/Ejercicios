@@ -20,11 +20,11 @@ public class FechaHora {
 		fechaHoraAuto();
 		
 		fechaHoraManual();
-		
+//		
 		fechaHoraManualCadena();
-		
+//		
 		operacionesConFechaYHora("2020-11-30T17:20:15");
-		
+//		
 		formateoFecha("2021-01-01T13:25:59");
 	}
 	

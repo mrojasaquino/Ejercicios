@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Flujos {
 
-	private List<Categoria> categorias;
+	private List<Categoria> modeloDatos;
 
 
 	/**
@@ -22,7 +22,7 @@ public class Flujos {
 	 */
 	private void init() {
 
-		categorias = new ArrayList<>();
+		modeloDatos = new ArrayList<>();
 
 		AtomicInteger baseIdPregunta = new AtomicInteger(1000);
 
@@ -47,7 +47,7 @@ public class Flujos {
 
 			baseIdPregunta.accumulateAndGet(1000, (x, y) -> x + y);
 
-			categorias.add(categoria);
+			modeloDatos.add(categoria);
 		});
 	}
 
@@ -58,7 +58,7 @@ public class Flujos {
 	private void doIt() {
 		List<Pregunta> aGuardar = new ArrayList<>();
 
-		categorias.forEach(
+		modeloDatos.forEach(
 				categoria -> 
 				aGuardar.addAll( 
 						categoria.getPreguntas().stream()

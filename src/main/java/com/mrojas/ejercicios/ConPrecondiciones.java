@@ -39,7 +39,7 @@ public class ConPrecondiciones {
 		if(ctaPac.getEntidadComercialId() < 0) {
 			EntidadComercial entidad = DP.findEntidadComercialForPacienteId(70);
 			
-			Preconditions.checkArgument(entidad != null, "");
+			Preconditions.checkArgument(entidad != null, "El paciente no tiene una entidad comercial ...");
 			entidadComercialId = entidad.getId();
 		} else {
 			entidadComercialId = ctaPac.getEntidadComercialId();

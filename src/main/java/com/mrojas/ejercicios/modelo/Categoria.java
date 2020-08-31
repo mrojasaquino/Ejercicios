@@ -4,6 +4,8 @@ import java.util.List;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
 /**
  * Modelo de las categorías.
@@ -11,7 +13,6 @@ import lombok.Data;
  *
  */
 @Data
-//@Builder
 public class Categoria {
 
 	private int id;

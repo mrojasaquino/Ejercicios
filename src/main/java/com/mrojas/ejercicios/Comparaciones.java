@@ -7,7 +7,7 @@ public class Comparaciones {
 
 	public static void main(String[] args) {
 
-		String variable = "Y";
+		String variable = null;
 
 
 		if(variable != null && variable.equals("Y")) {

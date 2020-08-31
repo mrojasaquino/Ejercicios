@@ -16,14 +16,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Flujos3 {
 
-//	private Map<Categoria, List<Pregunta>> modeloDatos;
-//
-//
-//	/**
-//	 * Inicializar el modelo de datos.
-//	 */
-//	private void init() {
-//
+	private Map<Categoria, List<Pregunta>> modeloDatos;
+
+
+	/**
+	 * Inicializar el modelo de datos.
+	 */
+	private void init() {
+
+		// descomentar cuando se habilite @Builder en Categoria y Pregunta
 //		modeloDatos = new LinkedHashMap<>();
 //
 //		AtomicInteger baseIdPregunta = new AtomicInteger(1000);
@@ -50,41 +51,41 @@ public class Flujos3 {
 //			modeloDatos.put(categoria, preguntas);
 //
 //		});
-//
-//	}
-//
-//
-//	/**
-//	 * Guardamos las preguntas afectadas.
-//	 */
-//	private void doIt() {
-//		List<Pregunta> aGuardar = new ArrayList<>();
-//
-//		modeloDatos.forEach((categoria, preguntas) -> {
-//			log.info("Procesando categoria {}", categoria.getNombre());
-//
-//			aGuardar.addAll( 
-//					preguntas.stream()
-//					.filter(Pregunta::isDirty)
-//					.collect(Collectors.toList())
-//					);
-//		});
-//
-//
-//		log.info("*** Total de preguntas a guardar {}", aGuardar.size());
-//
-//	}
-//
-//
-//
-//
-//	public static void main(String[] args) {
-//
-//		Flujos3 flujos = new Flujos3();
-//
-//		flujos.init();
-//		flujos.doIt();
-//
-//	}
+
+	}
+
+
+	/**
+	 * Guardamos las preguntas afectadas.
+	 */
+	private void doIt() {
+		List<Pregunta> aGuardar = new ArrayList<>();
+
+		modeloDatos.forEach((categoria, preguntas) -> {
+			log.info("Procesando categoria {}", categoria.getNombre());
+
+			aGuardar.addAll( 
+					preguntas.stream()
+					.filter(Pregunta::isDirty)
+					.collect(Collectors.toList())
+					);
+		});
+
+
+		log.info("*** Total de preguntas a guardar {}", aGuardar.size());
+
+	}
+
+
+
+
+	public static void main(String[] args) {
+
+		Flujos3 flujos = new Flujos3();
+
+		flujos.init();
+		flujos.doIt();
+
+	}
 
 }
